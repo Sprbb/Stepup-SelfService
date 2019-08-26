@@ -19,6 +19,11 @@ cache:
   directories:
     - ~/.composer
 
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install ant
+  - echo $(ant -version)
+
 before_script:
   - phpenv config-add .travis.php.ini
   - composer self-update
