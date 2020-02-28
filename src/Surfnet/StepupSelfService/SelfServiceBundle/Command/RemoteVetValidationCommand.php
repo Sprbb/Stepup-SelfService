@@ -18,36 +18,21 @@
 
 namespace Surfnet\StepupSelfService\SelfServiceBundle\Command;
 
-use Surfnet\StepupMiddlewareClientBundle\Identity\Dto\Identity;
-use Surfnet\StepupMiddlewareClientBundle\Identity\Dto\VerifiedSecondFactor;
 use Surfnet\StepupSelfService\SelfServiceBundle\Service\RemoteVetting\Value\AttributeMatchCollection;
-use Surfnet\StepupSelfService\SelfServiceBundle\Service\RemoteVetting\Value\ProcessId;
-use Surfnet\StepupSelfService\SelfServiceBundle\Service\RemoteVetting\Value\AttributeMatch;
 
 class RemoteVetValidationCommand
 {
     /**
-     * The attributes and their state
-     *
-     *  [key => [
-     *      'valid' => true,
-     *      'remarks' => 'remarks',
-     *  ]]
-     *
      * @var AttributeMatchCollection
      */
     public $matches = [];
 
     /**
-     * Should the attributes considered to be valid
-     *
      * @var bool
      */
     public $valid = false;
 
     /**
-     * Remarks about the attributes matching
-     *
      * @var string
      */
     public $remarks = '';
